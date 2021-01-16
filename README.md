@@ -3,7 +3,7 @@ Business hour task manager website.
 
 https://mvpeter.github.io/05-Day-Planner/.
 
-This webpage is a simple business hour day planner (9am to 5pm).  
+This webpage is a simple day planners based on business hours (9am to 5pm).  
 
     The deployed link:  https://mvpeter.github.io/05-Day-Planner/.
 
@@ -14,12 +14,13 @@ This webpage is a simple business hour day planner (9am to 5pm).
 
 
 
-The quiz will: 
+The planner will: 
 
-- The planner with show the current day of the week and the date.
+- Show the current day of the week and the date.
 - Save your event information in each hour row
-- Your event information will return with the page reload.
-- The planner with recognize 'past', 'present' and 'current' by coloring the row.
+- Keep your event information and will return with the page reload.
+- The planner will recognize 'past', 'present' and 'future' by coloring the row grey, orange, green.
+- The colors update every minute.
 
 
 Future additions:

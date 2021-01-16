@@ -1,9 +1,7 @@
 //Check local storage and write it back to the page
 function setLocalStorage(i) {
-    console.log(i + "      Number text passed to function setlocalStorage")
     var textVal = localStorage.getItem(i);
     if (typeof textVal === "string") {
-        console.log("found " + textVal)
         var textID = "#" + i + "text"
         $(textID).text(textVal);
     }
@@ -36,6 +34,10 @@ $(document).ready(function () {
 
         setLocalStorage(i);
         updateTimeColoring(i);
+        //Function to color the rows every 5 minutes
+        setInterval(function () {
+            updateTimeColoring(i);
+        }, 60 * 1000);
 
     }
 
@@ -43,10 +45,9 @@ $(document).ready(function () {
     $(".saveBtn").click(function () {
 
         var buttonNum = $(this).attr('id');
-        console.log(buttonNum + "    button ID");
         var localS = '#' + buttonNum + 'text';
         var localSVal = $(localS).val();
-        console.log(localSVal + "             text Value");
+
         localStorage.setItem(buttonNum, localSVal);
     });
 
@@ -62,17 +63,11 @@ $(document).ready(function () {
     function updateTimeColoring(i) {
         var currentHourNum = moment().format("H");
         var rowColor = "#" + i + "text";
-        console.log("The row chosen:  " + rowColor);
+
         if (i == currentHourNum) {
             $(rowColor).addClass("present");
         } else if (i > currentHourNum) {
             $(rowColor).addClass("future");
         } else $(rowColor).addClass("past");
     }
-
-    //Function to color the rows every 5 minutes
-    setInterval(function () {
-        updateTimeColoring();
-    }, 300 * 1000);
-
 });
