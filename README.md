@@ -2,13 +2,13 @@
 
 This webpage is a simple day planners based on business hours (9am to 5pm). 
 
-The deployed link:  [Deployed Link](https://mvpeter.github.io/05-Day-Planner/ "05-Day-Planner")
+Deployed: [Deployed Link](https://mvpeter.github.io/05-Day-Planner/ "05-Day-Planner")
 
-Link to the repository on GitHub:  https://github.com/MVPeter/05-Day-Planner
+Repository on GitHub:  https://github.com/MVPeter/05-Day-Planner
 
 
 Screenshot: 
-![ScreenShot](./assets/plannerScreenShot.jpg){: width=428 height=500}
+![ScreenShot](./assets/plannerScreenShot.jpg)
 
     The planner will: 
 
@@ -20,6 +20,6 @@ Screenshot:
 
 
     Future additions:
-    - Clearn all events button
+    - Clear all events or new day button.
     - Prompt to adjust business hours.
     - Prompt to select time format.
