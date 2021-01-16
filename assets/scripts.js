@@ -34,22 +34,8 @@ $(document).ready(function () {
         //write column to Document.
         $(".container").append(rows);
 
-
-        // Get Current Hour
-        var currentHourNum = moment().format("H");
-        
-        // console.log("The current Hour is:  " + currentHourNum);
-        // console.log("Current I is:  "  + i);
-        
-        var rowColor = "#" + i + "text";
-        console.log("The row chosen:  " + rowColor);
-        if (i == currentHourNum) {
-            $(rowColor).addClass("present");
-        } else if (i > currentHourNum) {
-            $(rowColor).addClass("future");
-        } else $(rowColor).addClass("past");
-        
         setLocalStorage(i);
+        updateTimeColoring(i);
 
     }
 
@@ -64,17 +50,29 @@ $(document).ready(function () {
         localStorage.setItem(buttonNum, localSVal);
     });
 
-    //Function to add AM or PM
+    //Function to convert to 12 hour add AM or PM
     function convert12HourNumPMAM(i) {
         var PMAM = i >= 12 ? "PM" : "AM";
-        var iPMAM = convert12HourNum(i);
-        return iPMAM + PMAM
-    }
-    //Function to convert from 24 hour to 12 hour
-    function convert12HourNum(i) {
         i = i % 12;
         i = i ? i : 12;
-        return i
+        return i + PMAM
     }
+
+    //Function to update the colors for past, present, and future
+    function updateTimeColoring(i) {
+        var currentHourNum = moment().format("H");
+        var rowColor = "#" + i + "text";
+        console.log("The row chosen:  " + rowColor);
+        if (i == currentHourNum) {
+            $(rowColor).addClass("present");
+        } else if (i > currentHourNum) {
+            $(rowColor).addClass("future");
+        } else $(rowColor).addClass("past");
+    }
+
+    //Function to color the rows every 5 minutes
+    setInterval(function () {
+        updateTimeColoring();
+    }, 300 * 1000);
 
 });
