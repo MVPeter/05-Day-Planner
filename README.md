@@ -2,12 +2,12 @@
 
 This webpage is a simple day planners based on business hours (9am to 5pm).  
 
-    The deployed link:  [https://mvpeter.github.io/05-Day-Planner/] (https://mvpeter.github.io/05-Day-Planner/ "05-Day-Planner")
+    The deployed link:  [Deployed Link](https://mvpeter.github.io/05-Day-Planner/ "05-Day-Planner")
 
     Link to the repository on GitHub:  https://github.com/MVPeter/05-Day-Planner
 
     Screenshot: 
-![Alt text](./assets/plannerScreenShot.jpg =500x428 "Screenshot")
+![Alt text](./assets/plannerScreenShot.jpg=500x428 "Screenshot")
 
 
 
